@@ -1,27 +1,141 @@
 <!doctype html>
-<html lang="en" data-theme="cinema">
+<html lang="en" data-theme="cinema" data-design="air" data-tree-story="after_exam" data-tree-layout="canvas">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Explore selected moments from NextMe-800, a longitudinal egocentric dataset for individual behavior prediction.">
-  <title>NextMe-800 — Life, unfolding.</title>
+  <title>NextMe-800 — Anticipating Personal Behavior</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23d2b58a'/%3E%3Ctext x='20' y='29' text-anchor='middle' font-family='Georgia' font-size='29' fill='white'%3EN%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=4">
-  <script src="data.js?v=4" defer></script><script src="app.js?v=4" defer></script>
+  <link rel="stylesheet" href="style.css?v=4"><link rel="stylesheet" href="apple.css?v=70e4b6c2c5a7">
+  <script src="data.js?v=4" defer></script><script src="atlas-app.js?v=5de62f3de481" defer></script><script src="story.js?v=b2571696f1e5" defer></script><script src="tree.js?v=3124af00d130" defer></script>
+  <link rel="canonical" href="https://kkkkawayi.github.io/nextme-800/">
+  <meta property="og:title" content="NextMe-800: Anticipating Personal Behavior">
+  <meta property="og:description" content="Four months of egocentric video. Explore one life, the NextAct benchmark, and possible futures.">
 </head>
 <body>
-  <header class="site-header"><a class="brand" href="#">NextMe<span>-800</span></a><nav><a href="#atlas">Explore</a></nav></header>
+  <header class="site-header"><a class="brand" href="#">NextMe<span>-800</span></a><nav><a href="#atlas">Video atlas</a><a href="#story">The paper</a><a href="NextMe-800_arXiv_preprint.pdf" target="_blank" rel="noopener">Paper PDF</a></nav></header>
+
   <main>
     <section class="intro" aria-labelledby="title">
-      <div><p class="intro-kicker">A longitudinal egocentric dataset</p><h1 id="title">Life, unfolding.</h1></div>
-      <div class="intro-copy"><p>One person. The everyday and the unexpected.<br>Ultra-long video for understanding what comes next.</p><a href="#atlas" class="explore-link">Step into the moments <span aria-hidden="true">↓</span></a></div>
-    </section>
+  <h1 id="title"><span class="hero-name">NextMe-800:</span> Anticipating Personal Behavior<br>from Months of Egocentric Video</h1>
+  <p class="hero-subtitle">If a system watched four months of your life through your own eyes, could it predict what you'll do next?</p>
+  <a class="hero-cue" href="#atlas">Explore the moments <span aria-hidden="true">↓</span></a>
+</section>
     <section id="atlas" class="atlas-section" aria-label="Interactive monthly photo atlas">
-      <div class="atlas-toolbar"><div class="atlas-instruction"><span class="status-dot"></span><span>Hover to step closer <span class="desktop-only">· click to hold a moment</span></span></div><div class="controls"><button id="motion" aria-pressed="true">Pause motion</button><button id="sound" aria-pressed="false">Sound off</button><button id="gaze-toggle" aria-pressed="true" title="Approximate recorded gaze where available">Gaze on</button><button id="language" aria-label="Change caption language">中文</button></div></div>
+      <div class="atlas-toolbar"><div class="atlas-instruction"><span class="status-dot"></span><span>Hover to step closer <span class="desktop-only">· click to hold a moment</span></span></div><div class="controls" hidden aria-hidden="true"><button id="motion" aria-pressed="true">Pause motion</button><button id="sound" aria-pressed="false">Sound off</button><button id="gaze-toggle" aria-pressed="true" title="Approximate recorded gaze where available">Gaze on</button><button id="language" aria-label="Change caption language">中文</button></div></div>
       <div class="atlas-scroll"><div id="atlas-grid" class="atlas-grid"><div class="axis-line"></div><div class="center-mark" aria-hidden="true">NextMe-800</div></div></div>
       <div class="atlas-footer"><span>April — August 2026</span><span>130 selected moments <span class="desktop-only">/ curated for diversity</span></span><span>130 video previews</span></div>
       
     </section>
 
+
+<article id="story" class="paper-story">
+  <section class="story-section question" id="question" aria-labelledby="question-title">
+    <div class="story-shell prose-shell">
+      <p class="section-number">01 / The question</p>
+      <h2 id="question-title">Plans meet real life.</h2>
+      <div class="prose"><p>We make ambitious plans all the time: learn the piano, start a workout routine, finish that research project. Actual behavior rarely follows the script. We get distracted, change priorities, and fall back into familiar routines.</p><p>Hindsight is remarkably useful. Looking back, we can often see where our plans diverged from what we actually did. But hindsight arrives after the fact. What if a system could preview plausible paths before you commit, based on your own history?</p><p>That is the question behind NextMe-800: not what a generic person might do, but what <em>this person</em> might do next, given the patterns of their life.</p></div>
+    </div>
+  </section>
+
+  <section class="story-section life" id="life" aria-labelledby="life-title">
+    <div class="story-shell">
+      <div class="story-heading"><p class="section-number">02 / One life, observed over time</p><h2 id="life-title">795.5 hours.<br>126 calendar days.</h2><p>To study personal behavior, we need temporal depth within one person. NextMe-800 records 1 Hz first-person RGB, gaze, and audio across four months, from research and meals to travel and rare encounters.</p></div>
+      <div class="stat-band"><div><b>528</b><span>recording sessions</span></div><div><b>39.5%</b><span>estimated awake-time coverage</span></div><div><b>18</b><span>days with no recording</span></div></div>
+      <figure class="paper-art wide-art"><a href="figures/coverage.png" target="_blank" rel="noopener"><img src="figures/coverage.png" alt="Daily recorded hours over 126 calendar days, including blank days and a seven-day moving average" loading="lazy"></a><figcaption>Figure 2a · Daily recorded hours. Breaks for charging and incompatible activities remain real gaps in the record. <span>Open full-size figure</span></figcaption></figure>
+      <div class="story-split"><p>Ego4D includes 931 participants but averages about 3.9 recorded hours per person. EgoLife follows six people for seven days. NextMe-800 complements that breadth with months of dense observation of one person.</p><p>Its scenes range from coding, study, meals, exercise, dating, and social time to dolphins, karst landscapes, and robotic dogs. This is a curated view of habitual activities and uncommon events, not an unbiased sample of their frequency.</p></div>
+    </div>
+  </section>
+
+  <section class="story-section hierarchy" id="hierarchy" aria-labelledby="hierarchy-title">
+    <div class="story-shell">
+      <div class="story-heading"><p class="section-number">03 / From pixels to behavior</p><h2 id="hierarchy-title">Zoom out without losing the moment.</h2><p>A three-hour study session contains thousands of atomic actions: editing code, checking a phone, adjusting the air conditioner. Thirty-second video windows become first-person captions; a five-level hierarchy then groups them by shared goals.</p></div>
+      <figure class="paper-art hierarchy-art"><a href="figures/hierarchy.png" target="_blank" rel="noopener"><img src="figures/hierarchy.png" alt="Paper Figure 3 showing one puzzle session at low, mid, and high levels of the caption tree" loading="lazy"></a><figcaption>Figure 3 · One puzzle session at three of five abstraction levels. <span>Open full-size figure</span></figcaption></figure>
+      <div class="level-strip" aria-label="Five levels and average event durations"><div><b>L1</b><span>529,431 events</span><small>~5 sec</small></div><div><b>L2</b><span>48,093</span><small>~1 min</small></div><div><b>L3</b><span>6,367</span><small>~7.5 min</small></div><div><b>L4</b><span>1,988</span><small>~24 min</small></div><div><b>L5</b><span>1,236</span><small>~39 min</small></div></div>
+      <p class="big-takeaway">428× fewer events from L1 to L5. Each step removes detail while preserving a broader goal.</p>
+      <div class="scale-comparison" aria-label="Three-granularity view from appendix Table 6">
+        <div class="scale-heading"><h3>One recording, three resolutions.</h3><p>A 3 h 37 min recording, from major activity to atomic detail.</p></div>
+        <div class="appendix-scroll" tabindex="0" aria-label="Scroll to compare caption levels">
+          <table class="appendix-table">
+            <colgroup><col class="coarse-column"><col class="task-column"><col class="atomic-column"></colgroup>
+            <thead><tr><th scope="col">L5 <span>2 events</span></th><th scope="col">L2 <span>178 events</span></th><th scope="col">L1 <span>2,287 events</span></th></tr></thead>
+            <tbody>
+              <tr class="excerpt-gap"><td rowspan="7" class="major-cell"><time>14:23–17:54</time><span class="event-duration">3 h 31 min</span><p>I work on RL homework</p></td><td colspan="2">… earlier tasks …</td></tr>
+              <tr class="task-row"><td><time>16:26–16:29</time><p>I compute target Q-values</p></td><td><div class="atomic-event"><time>16:27:42–16:27:57 <span>15 s</span></time><p>I edit <code>target_q = …</code></p></div><p class="event-gap">…</p><div class="atomic-event compact"><time>16:29:33–16:29:36 <span>3 s</span></time><p>I scratch my nose</p></div><div class="atomic-event compact"><time>16:29:43–16:29:44 <span>1 s</span></time><p>I glance at my phone</p></div></td></tr>
+              <tr class="excerpt-gap"><td>…</td><td>…</td></tr>
+              <tr class="task-row"><td><time>16:40–16:42</time><p>I chat on WeChat</p></td><td><div class="atomic-event"><time>16:40:12–16:40:18 <span>6 s</span></time><p>I open a WeChat notification <span class="event-gap">…</span></p></div></td></tr>
+              <tr class="task-row"><td><time>16:42–16:55</time><p>I browse video recommendations</p></td><td><div class="atomic-event"><time>16:42:12–16:42:16 <span>4 s</span></time><p>I view video recommendation cards <span class="event-gap">…</span></p></div></td></tr>
+              <tr class="task-row"><td><time>16:55–16:56</time><p>I adjust the AC</p></td><td><div class="atomic-event compact"><time>16:55:23–16:55:29 <span>6 s</span></time><p>I activate AC display</p></div><div class="atomic-event compact"><time>16:55:30–16:55:38 <span>8 s</span></time><p>I increase temp. to 26°C</p></div></td></tr>
+              <tr class="excerpt-gap"><td colspan="2">… later tasks …</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="example-note">Table 6 · One major activity contains many tasks; each task contains finer actions.</p>
+      </div>
+      <div class="story-split"><p>L1 keeps the nose-scratch and phone glance. L5 turns thousands of details into a few major activities. Neither scale is intrinsically best: the right level depends on whether the forecast concerns a moment or the rest of an afternoon.</p><p>At each level, the hierarchy abstracts adjacent events sharing a goal. It does not simply cut the day into fixed-duration blocks.</p></div>
+    </div>
+  </section>
+
+  <section class="story-section metric" id="metric" aria-labelledby="metric-title">
+    <div class="story-shell">
+      <div class="story-heading"><p class="section-number">04 / Measuring an open-ended future</p><h2 id="metric-title">What counts as a match?</h2><p>Suppose the recorded action is “I grab a bottle of cola from the fridge,” while a prediction says “I pick up a glass of water from the table.” Exact word overlap misses some meaning; a loose semantic score may overlook the changed action and object.</p></div>
+      <div class="metric-steps"><div><span>01 · A single action</span><h3>Embedding similarity</h3><p>Qwen3-Embedding-8B compares the meaning of two atomic actions, including their core verbs and objects.</p></div><div><span>02 · A sequence</span><h3>Semantic edit distance</h3><p>Soft edit distance (SED) aligns whole trajectories. A substitution costs 1 − embedding cosine similarity; insertions and deletions cost 1. The sequence score is normalized against chance.</p></div></div>
+      <div class="data-table-wrap"><table class="data-table metric-table"><caption>Human agreement and score spread from Table 2</caption><thead><tr><th scope="col">Method</th><th scope="col">Pairwise ↑</th><th scope="col">Spread H₁₀ ↑</th></tr></thead><tbody>
+        <tr class="metric-group"><th colspan="3" scope="colgroup">Semantic models</th></tr>
+        <tr class="metric-data"><th scope="row">Qwen3-Reranker-8B</th><td>0.9417</td><td>0.6429</td></tr>
+        <tr class="metric-data highlight"><th scope="row">Qwen3-Embedding-8B</th><td>0.9290</td><td>0.9724</td></tr>
+        <tr class="metric-group"><th colspan="3" scope="colgroup">Language-model judges</th></tr>
+        <tr class="metric-data"><th scope="row">Gemini-3.7-Flash</th><td>0.9097</td><td>0.9407</td></tr>
+        <tr class="metric-data"><th scope="row">GPT-5.6</th><td>0.8968</td><td>0.9113</td></tr>
+        <tr class="metric-data"><th scope="row">Claude-Haiku-4.5</th><td>0.8952</td><td>0.9612</td></tr>
+        <tr class="metric-data"><th scope="row">Qwen3.5-Flash</th><td>0.8794</td><td>0.8852</td></tr>
+        <tr class="metric-group"><th colspan="3" scope="colgroup">Classic text metrics</th></tr>
+        <tr class="metric-data"><th scope="row">BERTScore</th><td>0.8269</td><td>0.5435</td></tr>
+        <tr class="metric-data"><th scope="row">ROUGE-L</th><td>0.7698</td><td>0.8037</td></tr>
+        <tr class="metric-data"><th scope="row">BLEU</th><td>0.6916</td><td>0.2878</td></tr>
+      </tbody></table></div>
+      <p class="fine-note">The reranker agrees slightly more often with people but clusters many scores at the extremes. Embeddings preserve graded differences for SED. H₁₀ measures score spread, not correctness; these are semantic scores, not classification accuracy.</p>
+    </div>
+  </section>
+
+  <section class="story-section context" id="context" aria-labelledby="context-title">
+    <div class="story-shell"><div class="story-heading"><p class="section-number">05 / How much history?</p><h2 id="context-title">More memories don't always help.</h2><p>Can in-context learning keep scaling when it sees more of one person's history? We vary the context from 1 to 3,000 recent events and ask how the model's semantic prediction score changes. Fine-grained scores rise quickly, then plateau or decline; coarser activities benefit from longer context, but eventually saturate too.</p></div><figure class="paper-art context-art"><a href="figures/context.png" target="_blank" rel="noopener"><img src="figures/context.png" alt="Paper Figure 5: five context scaling curves on a logarithmic time axis from seconds to days" loading="lazy"></a><figcaption>Figure 5 · History duration varies with abstraction level. Shaded bands show variation across three generations; diamonds estimate performance at 50 history events. <span>Open full-size figure</span></figcaption></figure><div class="story-split"><p>Fine atomic actions often depend most on the last few minutes. Broader activities can draw on patterns that unfold over days. The graph suggests different useful horizons at different levels, not a universal context length.</p><p>A 50-event window lies in or near a strong range for the paper's in-context experiments, so it is used in the main benchmark. It is a practical default, not proof that 50 is optimal for every situation.</p></div></div>
+  </section>
+
+  <section class="story-section benchmark" id="benchmark" aria-labelledby="benchmark-title">
+    <div class="story-shell"><div class="story-heading"><p class="section-number">06 / The benchmark</p><h2 id="benchmark-title">Can a model anticipate you?</h2><p>NextAct combines 1,000 points from NextMe-800 with 500 from six EgoLife participants. Given 50 recent events, learned predictors generate three candidate trajectories for the next one or ten recorded events. The reported score selects the best match to the ground truth, a generous best-of-three evaluation.</p></div>
+      <div class="benchmark-switch" role="group" aria-label="Prediction horizon"><button type="button" data-horizon="1" aria-pressed="true">Next event</button><button type="button" data-horizon="10" aria-pressed="false">Next ten</button></div>
+      <div class="leaderboard" aria-live="polite"><div class="leaderboard-summary"><strong>0.3431</strong><span>best reported K=1 score<br>Gemini 3.1 Pro</span></div><div class="data-table-wrap"><table class="data-table leaderboard-table"><caption>Selected Table 3 predictors · normalized embedding scores across L1–L5</caption><thead><tr><th scope="col">Predictor</th><th scope="col">L1</th><th scope="col">L2</th><th scope="col">L3</th><th scope="col">L4</th><th scope="col">L5</th><th scope="col">Mean</th></tr></thead><tbody></tbody></table></div></div>
+      <div class="story-split"><p>Frontier models cluster around 0.32–0.34 for the next event, above the repeat-recent baseline of 0.1916. For ten events, the best score is 0.1943. These are normalized semantic sequence scores, not percentages of exactly correct actions.</p><p>Codex + DeepSeek can retrieve history beyond the 50-event window, yet does not lead the reported mean at either horizon. Access to more past activity is different from knowing which past activity matters now.</p></div>
+      <div class="case-pair" id="examples-k1"><div><span class="case-tag">A continuation that works</span><p>Recorded: “I read the Feishu document notes.”<br>Predicted: “I read the Feishu reflection notes.”</p><strong>0.92 · K=1, L1</strong></div><div><span class="case-tag">A transition it misses</span><p>Recorded: “I walk away from the table.”<br>Predicted: “I write mathematical formulas on the notepad.”</p><strong>0.00 · K=1, L1</strong></div></div>
+      <div class="sequence-case" id="examples-k10" hidden><div class="sequence-case-head"><div><span class="case-tag">A longer forecast that partly works</span><h3>It follows the shape of the day.</h3></div><strong>0.49 · K=10, L3</strong></div><div class="sequence-compare"><div><small>Recorded</small><ol><li>Pack belongings</li><li>Travel to the library</li><li>Study at the library</li><li>Attend a lecture</li><li>Meet a companion for a meal</li></ol></div><div><small>Predicted</small><ol><li>Pack study materials</li><li>Travel to the library</li><li>Study at the library</li><li>Attend a lecture</li><li>Return home for dinner</li></ol></div></div><p>Five editorially condensed milestones from the ten-step appendix example. The first four stages broadly align; the meal location and company do not. The reported 0.49 is for all ten actions, not these five summaries.</p></div>
+      <p class="fine-note">Examples come from the preprint appendix. The benchmark gives target recording windows; events during unobserved gaps are not treated as known behavior.</p>
+    </div>
+  </section>
+
+  <section class="story-section granularity" id="granularity" aria-labelledby="granularity-title">
+    <div class="story-shell"><div class="story-heading"><p class="section-number">07 / The most useful scale</p><h2 id="granularity-title">The middle is easier to foresee.</h2><p>Atomic actions are noisy. Major activities are farther apart. Between those extremes, the hierarchy finds a more predictable scale.</p></div><figure class="paper-art granularity-art"><a href="figures/granularity.png" target="_blank" rel="noopener"><img src="figures/granularity.png" alt="Paper Figure 6: average semantic score rises from L1 to intermediate levels then falls toward L5, especially for ten-step prediction" loading="lazy"></a><figcaption>Figure 6 · Frontier-model average by abstraction level; bands show variation across models. <span>Open full-size figure</span></figcaption></figure><div class="story-split"><p>At K=1, the reported average rises toward L3–L4 (roughly 7.5–24 minutes per event) before a small decline at L5. The hierarchy removes incidental detail without yet losing all continuity.</p><p>At K=10, the peak is more clearly L3. Ten L5 events span 5.8 hours on average: by then, even an accurate sense of the person's routine may not identify the turns their day will take.</p></div></div>
+  </section>
+
+  <section class="story-section closing" id="closing" aria-labelledby="closing-title">
+    <div class="story-shell prose-shell">
+      <p class="section-number">What comes next</p>
+      <h2 id="closing-title">So why does any of this matter?</h2>
+      <div class="prose">
+        <p>Imagine a future where everyone has a digital twin. Before each day begins, we could explore a tree of possible futures — multiple trajectories of how we might actually behave — and choose the path we most want to live. By turning hindsight into foresight, personal behavioral prediction could help us make better choices, reduce regret, and face the future with greater clarity.</p>
+      </div>
+    </div>
+    <div class="story-shell future-example" aria-labelledby="future-title">
+      <div class="future-heading"><p class="section-number">A forecast beside a recorded day</p><h3 id="future-title">What would a preview change?</h3><p id="tree-intro"></p></div>
+      <div class="tree-disclosure"><span class="tree-key actual-key">Recorded path</span><span class="tree-key projected-key">Earlier preview</span><span class="tree-key choice-key">Other possibilities</span></div>
+      <p class="tree-hint">Open a choice. Drag to explore. Zoom out to see the whole day.</p>
+      <div class="tree-canvas" id="choice-tree" role="region" aria-label="After the exam, an interactive branching day">
+        <div class="canvas-toolbar" aria-label="Tree view controls"><button type="button" data-canvas="out" aria-label="Zoom out">−</button><output id="canvas-zoom" aria-live="polite">100%</output><button type="button" data-canvas="in" aria-label="Zoom in">+</button><button type="button" data-canvas="fit">Fit tree</button><button type="button" data-canvas="expand">Expand all</button><button type="button" data-canvas="reset">Reset</button></div>
+        <div class="canvas-viewport" tabindex="0" aria-label="Drag the tree canvas, or use arrow keys to pan"><div class="canvas-world"><svg class="canvas-links" aria-hidden="true"></svg><div class="canvas-nodes"></div></div></div>
+      </div>
+      <p class="ending-signature">NextMe-800</p>
+    </div>
+  </section>
+</article>
 
   </main>
   
